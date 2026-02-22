@@ -43,15 +43,12 @@ async def download(request: Request):
             # Bypassing Youtube Bot checks
             'cookiefile': None,
             'nocheckcertificate': True,
-<<<<<<< HEAD
-=======
             # Extremely important: Force YouTube to think this is an Android phone to bypass the "Sign in" web bot checker
             'extractor_args': {
                 'youtube': {
                     'player_client': ['android', 'web']
                 }
             }
->>>>>>> 0df77cf (second commit)
         }
 
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:
@@ -71,3 +68,4 @@ async def download(request: Request):
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 10000))
     uvicorn.run(app, host="0.0.0.0", port=port)
+
