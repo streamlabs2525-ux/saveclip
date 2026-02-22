@@ -43,6 +43,15 @@ async def download(request: Request):
             # Bypassing Youtube Bot checks
             'cookiefile': None,
             'nocheckcertificate': True,
+<<<<<<< HEAD
+=======
+            # Extremely important: Force YouTube to think this is an Android phone to bypass the "Sign in" web bot checker
+            'extractor_args': {
+                'youtube': {
+                    'player_client': ['android', 'web']
+                }
+            }
+>>>>>>> 0df77cf (second commit)
         }
 
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:
